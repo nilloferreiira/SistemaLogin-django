@@ -1,0 +1,77 @@
+{% extends 'base.html' %} 
+
+{% block 'title' %} Cadastro {% endblock %} 
+
+{% block 'navbar' %} Cadastro {%endblock%} 
+
+{% block 'content' %}
+<div class="conteiner">
+  {% if status == '0' %}
+  <div class="alert alert-success" role="alert" style="text-align: center">
+    Usuário cadastrado com sucesso!
+  </div>
+  {% endif %} {% if status == '1' %}
+  <div class="alert alert-danger" role="alert" style="text-align: center">
+    Campo de nome ou email incompletos!
+  </div>
+  {% endif %} {% if status == '2' %}
+  <div class="alert alert-danger" role="alert" style="text-align: center">
+    Senha muito curta!
+  </div>
+  {% endif %} {% if status == '3' %}
+  <div class="alert alert-danger" role="alert" style="text-align: center">
+    Email já cadastrado no sistema
+  </div>
+  {% endif %} {% if status == '4' %}
+  <div class="alert alert-danger" role="alert" style="text-align: center">
+    Erro interno do sistema
+  </div>
+  {% endif %}
+
+  <div class="row" style="width: 720px; text-align: center; margin: 0 auto">
+    <div class="col-md-3"></div>
+
+    <div class="col-md">
+      <br />
+      <h1>Cadastre-se</h1>
+      <hr />
+      <form method="POST" action="{% url 'valida_cadastro' %}"> {% csrf_token %}
+        <input
+          type="text"
+          name="nome"
+          id="nome"
+          placeholder="Seu nome"
+          class="form-control"
+        />
+        <br />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Seu email"
+          class="form-control"
+        />
+        <br />
+        <input
+          type="password"
+          name="senha"
+          id="senha"
+          placeholder="Sua senha"
+          class="form-control"
+        />
+        <br />
+        <button class="btn btn-success">Enviar</button>
+        <a
+          href="{% url 'login' %}"
+          class="btn btn-info btn-lg"
+          style="padding: 0.45rem 0.9em; font-size: 1rem"
+          >Login</a
+        >
+      </form>
+    </div>
+
+    <div class="col-md-3"></div>
+  </div>
+</div>
+
+{%endblock%}
