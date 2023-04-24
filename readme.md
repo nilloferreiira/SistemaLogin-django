@@ -1,6 +1,8 @@
-## Sistema de login e cadastro usando Python e Django
+## Sistema de login e cadastro usando Python e Django(atualizado)
 
 Essa é uma aplicação feita em python e django, um projeto para consolidar meus conhecimentos neste framework, a parte do front-end foi feita de forma simples utilizando bootstrap, meu foco nesse projeto foi desenvolver o back-end com o django.
+
+Atualização: Fiz pequenas alterações ultilizando o django sessions, criei uma simples página de home, utilizando o session, assim uma pessoa que não está logada não pode acessar essa página.
 
 ## Tecnologias 
 

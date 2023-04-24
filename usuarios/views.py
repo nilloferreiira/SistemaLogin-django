@@ -53,10 +53,15 @@ def valida_login(request):
     usuarios = Usuario.objects.filter(email = email).filter(senha = senha)
 
     if len(usuarios) == 1:
-        return redirect('/auth/login/?status=0')
+        request.session['logado'] = True
+        return redirect('/sistema/home')
    
     elif len(usuarios) == 0:
         return redirect('/auth/login/?status=5')
+    
+def sair(request):
+    request.session['logado'] = None
+    return redirect('/auth/login/')
     
 def login(request):
     status = request.GET.get('status')
