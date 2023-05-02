@@ -6,25 +6,12 @@
 
 {% block 'content' %} 
 <div class="conteiner">
-    {% if status == '0' %}
-    <div class="alert alert-success" role="alert" style="text-align: center">
-        Logado!
-    </div>
-    {% endif %} {% if status == '5' %}
-    <div class="alert alert-warning" role="alert" style="text-align: center">
-        Email ou senha incorretos
-    </div>
-    {% endif %} {% if status == '6' %}
-    <div class="alert alert-danger" role="alert" style="text-align: center">
-      Erro interno do sistema
-    </div>
-    {% endif %} {% if status == '7' %}
-    <div class="alert alert-danger" role="alert" style="text-align: center">
-      Faça login antes de acessar a plataforma
-    </div>
-    {% endif %}
 
-    
+  {% if messages %}
+    {% for i in messages %}
+      <div class="alert {{i.tags}}" role="alert">{{i}}</div>
+    {% endfor %}
+  {% endif %}
   
     <div class="row" style="width: 720px; text-align: center; margin: 0 auto">
       <div class="col-md-3"></div>

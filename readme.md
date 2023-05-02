@@ -4,6 +4,8 @@ Essa é uma aplicação feita em python e django, um projeto para consolidar meu
 
 Atualização: Fiz pequenas alterações ultilizando o django sessions, criei uma simples página de home, utilizando o session, assim uma pessoa que não está logada não pode acessar essa página.
 
+Atualização 2: Melhorei as mensagens de erro usando o django messages, uma forma de agilizar o processo de criação de mensagens direcionadas ao usuário.
+
 ## Tecnologias 
 
 Aqui estão as tecnologias usadas no projeto

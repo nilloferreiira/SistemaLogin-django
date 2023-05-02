@@ -6,26 +6,11 @@
 
 {% block 'content' %}
 <div class="conteiner">
-  {% if status == '0' %}
-  <div class="alert alert-success" role="alert" style="text-align: center">
-    Usuário cadastrado com sucesso!
-  </div>
-  {% endif %} {% if status == '1' %}
-  <div class="alert alert-danger" role="alert" style="text-align: center">
-    Campo de nome ou email incompletos!
-  </div>
-  {% endif %} {% if status == '2' %}
-  <div class="alert alert-danger" role="alert" style="text-align: center">
-    Senha muito curta!
-  </div>
-  {% endif %} {% if status == '3' %}
-  <div class="alert alert-danger" role="alert" style="text-align: center">
-    Email já cadastrado no sistema
-  </div>
-  {% endif %} {% if status == '4' %}
-  <div class="alert alert-danger" role="alert" style="text-align: center">
-    Erro interno do sistema
-  </div>
+
+  {% if messages %}
+    {% for i in messages %}
+      <div class="alert {{i.tags}}" role="alert">{{i}}</div>
+    {% endfor %}
   {% endif %}
 
   <div class="row" style="width: 720px; text-align: center; margin: 0 auto">
