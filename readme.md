@@ -6,6 +6,8 @@ Atualização: Fiz pequenas alterações ultilizando o django sessions, criei um
 
 Atualização 2: Melhorei as mensagens de erro usando o django messages, uma forma de agilizar o processo de criação de mensagens direcionadas ao usuário.
 
+Atualização 3: Melhorei o sistema de login e logout usando o sessions do proprio django atulizando o auth, dessa forma o login e o logout são mais seguros, além disso melhorei o sistema de segurança bloqueando o acesso duplo e a verificação dos usuários logados está melhor. Ademais, adicionei novos campos, estendendo do "AbstractUser" da models do auth do django, assim pedindo informações residenciais, e deixo o campo "User", herdado do django auth totalmente personalizável. Por fim, personalizei a área admin do django.
+
 ## Tecnologias 
 
 Aqui estão as tecnologias usadas no projeto

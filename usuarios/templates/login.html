@@ -22,10 +22,10 @@
         <hr />
         <form method="POST" action="{% url 'valida_login' %}"> {% csrf_token %}
           <input
-            type="email"
-            name="email"
-            id="email"
-            placeholder="Seu email"
+            type="text"
+            name="nome"
+            id="nome"
+            placeholder="Seu Nome de usuário"
             class="form-control"
           />
           <br />

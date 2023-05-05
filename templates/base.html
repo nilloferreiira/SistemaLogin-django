@@ -12,9 +12,26 @@
     {% block 'head' %}{%endblock%}
   </head>
   <body>
-    <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">{% block 'navbar'%}{%endblock%}</a>
-      </nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">{% block 'navbar' %} {% endblock %}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+              {{user.username}}
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'sair' %}">Sair</a>
+            </div>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
 
    {% block 'content'%} {% endblock %}
 
